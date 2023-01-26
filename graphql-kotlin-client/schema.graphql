@@ -1,0 +1,42 @@
+type Author implements People {
+  age: AuthorType!
+  name: String!
+}
+
+enum AuthorType {
+  BAD
+  GOOD
+}
+
+# This is a simple book
+type Book {
+  # Name field
+  name: String! @deprecated(reason: "No longer needed")
+}
+
+type Computations {
+  type: String!
+  getResult: Int!
+}
+
+union Example = ExampleName
+
+type ExampleName {
+  name: String!
+}
+
+interface People {
+  name: String!
+}
+
+type Programmer implements People {
+  language: [String!]!
+  name: String!
+}
+
+type Query {
+  getBook: Book! @deprecated(reason: "Do not use this")
+  getComputations: Computations!
+  getPeople: [People!]!
+  getUnion: Example!
+}

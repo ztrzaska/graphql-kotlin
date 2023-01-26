@@ -1,0 +1,19 @@
+query PeopleQuery {
+    getPeople {
+        __typename,
+        name,
+        ... on Author {
+            age
+        },
+        ... on Programmer {
+            language
+        }
+    },
+    getComputations {
+        type,
+        getResult
+    },
+    getUnion {
+        __typename
+    }
+}
