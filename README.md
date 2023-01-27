@@ -1,4 +1,4 @@
-# This repository shows implementation of GraphQL for Spring boot and kotlin
+# GraphQL with kotlin and spring boot project
 
 ### Getting Started
 
