@@ -1,9 +1,50 @@
-# Getting Started
+# This repository shows implementation of GraphQL for Spring boot and kotlin
 
-### Reference Documentation
-For further reference, please consider the following sections:
+### Getting Started
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.8/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.8/maven-plugin/reference/html/#build-image)
+The following application illustrate simple functionalities with graphQL API and kotlin. It has queries and mutations. To reduce development time, automatic graphql schema generation was used.
+
+Graphql server was integrated with com.expediagroup libraries, which are dedicated for kotlin.
+
+The application contains two projects:
+
+
+* graphql-kotlin - graphql server
+* graphql-kotlin-client - graphql client which connects to the graphql server
+
+
+### Playground
+```
+http://localhost:9001/playground
+```
+
+### Example queries
+
+```
+query {
+  getPeople {
+    __typename,
+    name,
+    ... on Author {
+      age
+    },
+    ... on Programmer {
+      language
+    }
+  },
+  getComputations {
+    type,
+    getResult
+  },
+  getUnion {
+    __typename
+  }
+}
+```
+
+
+## Documentation of used libraries
+* [GraphQL documentation](https://graphql.org/)
+* [GraphQL Extended scalars documentation](https://github.com/graphql-java/graphql-java-extended-scalars)
+* [Spring boot](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 
